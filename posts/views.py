@@ -6,9 +6,10 @@ from django.db.models import Q
 
 
 def blog_view(request):
+    date = dt.date.today()
     posts = Post.objects.all()
     
-    return render(request,'blog.html',{'posts':posts})
+    return render(request,'blog.html',{'date':date, 'posts':posts})
 
 def detail_view(request, id):
     post = get_object_or_404(Post, id = id)
