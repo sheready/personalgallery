@@ -8,10 +8,16 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
+class Location(models.Model):
+    name = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=30)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
+    location = models.ForeignKey(Location, on_delete=models.PROTECT, default=1)
     description = models.TextField()
     image =  models.ImageField(blank=True)
     
