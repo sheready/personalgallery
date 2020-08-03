@@ -40,6 +40,25 @@ def category_list(request):
     }
     return context
 
+class LocListView(ListView):
+    template_name = 'location.html'
+    context_object_name = 'loclist'
+
+    def get_queryset(self):
+        content = {
+            'loc':self.kwargs['location'],
+            'posts':Post.objects.filter(location__name = self.kwargs['location'])
+        }
+        return content
+
+def location_list(request):
+    location_list = Location.objects.exclude(name='default')
+    context = {
+        "location_list":location_list,
+    }
+    return context
+
+
 def search_results(request):
     if 'post' in request.GET and request.GET["post"]:
         search_term = request.GET.get("post")
