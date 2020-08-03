@@ -19,11 +19,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from posts import views
+admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.blog_view,name='blog'),
-    path('<int:id>/',views.detail_view,name='detail')
+    path('category/<category>',views.CatListView.as_view(),name='category'),
+    path('results/',views.search_results, name='search'),
+    
+    path('<int:id>/',views.detail_view,name='detail'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
