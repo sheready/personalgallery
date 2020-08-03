@@ -38,12 +38,10 @@
         
       </ul>
       
-      
-        
     </div>
-    <form methods='GET' action="{% url 'search' %}" >
-        <input type='text' name='post'  placeholder='Search gallery..'  aria-label="Search" />
-        <button type='submit'  class="btn btn-success" >
+    <form methods='GET' action="{% url 'search' %}" class="form-inline my-2 my-lg-0" >
+        <input type='text' name='post' class="form-control mr-sm-2" placeholder='Search gallery..'  aria-label="Search" />
+        <button type='submit'  class="btn btn-secondary my-2 my-sm-0" >
           Search
         </button>
     </form> 
