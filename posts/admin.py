@@ -18,3 +18,4 @@ class PostImageAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(models.Category)
+admin.site.register(models.Location)
