@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Post, PostImage
+from .models import Post, PostImage,Category
+from . import models
 
 # Register your models here.
 class PostImageAdmin(admin.StackedInline):
@@ -16,3 +17,4 @@ class PostAdmin(admin.ModelAdmin):
 class PostImageAdmin(admin.ModelAdmin):
     pass
 
+admin.site.register(models.Category)
