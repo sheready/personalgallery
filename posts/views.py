@@ -40,3 +40,15 @@ def category_list(request):
     }
     return context
 
+def search_results(request):
+    if 'post' in request.GET and request.GET["post"]:
+        search_term = request.GET.get("post")
+        searched_images = Post.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"posts": searched_images})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request,'search.html',{"message":message})
+  
