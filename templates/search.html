@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container search">
     <div class="row">
-        <div class="row text-light text-center">
+        <div class="row  text-center">
             {% if posts %}
               <h2>Found {{ posts|length }} of searched term {{message}}</h2>
             {% else %}
@@ -12,40 +12,20 @@
           </div>
           
     {% if posts %} 
-
-        <div class="row row-cols-1 row-cols-md-8">
-        
-        <div class="col mb-4">
+        <div class="container">
         
             {% for post in posts %}
-            <div class="card">
-
-            <!--Card image-->
-            <div class="view overlay">
-                <img class="card-img-top" src="{{post.image.url}}"
-                alt="Card image cap">
-                <a href="#!">
-                <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-                <!--Title-->
-                <h4 class="card-title">{{post.title}}</h4>
-                <!--Text-->
-                <p class="card-text">{{post.descrption}}</p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <button><a href="{% url 'detail' post.id %}" class="btn btn-primary btn-md">See more photos</button>
-
-            </div>
-
-            </div>
-            <!-- Card -->
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="{{post.image.url}}" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">{{post.title}}</h4>
+                        <p class="card-text">{{post.description}}</p>
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary">See more photos</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        </div>
+           
     {% endif %}
 
 {% endblock %}
