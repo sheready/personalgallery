@@ -18,7 +18,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
-   
+    @classmethod
+    def search_by_category(cls,search_term):
+        posts = cls.objects.filter(category__name__icontains=search_term)
+        return posts
     
 class PostImage(models.Model):
     post = models.ForeignKey(Post, default = None, on_delete=models.CASCADE)
