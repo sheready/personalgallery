@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-{{block.super}}  
+{{block.super}} 
+<centre>
 <div class="container-fluid">
     <h1>Gallery of {{ catlist.cat }} </h1>
     
@@ -23,7 +24,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <img src="{{post.image.url}}" class="img-responsive img-thumbnail" alt="Image">
+                            <img src="{{post.image.url}}" class="img-responsive img-thumbnail" style="width:50%" alt="Image">
                         </div>
                         <h4>{{post.location}}</h4>
                         <p>{{post.description}}</p>
@@ -36,5 +37,5 @@
 
 {% endfor %}
 </div>
-
+</centre> 
 {% endblock %}

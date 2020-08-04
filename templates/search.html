@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<center>
 <div class="container search">
     <div class="row">
         <div class="row  text-center">
@@ -12,7 +13,7 @@
           </div>
           
     {% if posts %} 
-        <div class="container">
+        <div class="container fluid">
         
             {% for post in posts %}
                 <div class="card" style="width:400px">
@@ -27,5 +28,5 @@
         </div>
            
     {% endif %}
-
+</center>
 {% endblock %}

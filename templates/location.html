@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  
+<center>
 <div class="container">
     <h1>Gallery of location {{ loclist.loc }} </h1>
     {% for post in loclist.posts %}
@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+</center>
     {% endfor %}
 </div>
 
