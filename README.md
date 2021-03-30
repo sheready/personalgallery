@@ -6,7 +6,7 @@ of africa scenery
 
 ## Description
 
-* GallerySite is all about collections of defferent photos for diffferent categories.
+* GallerySite is all about collections of defferent photos for diffferent categories.Link to site https://personalgallerys.herokuapp.com/
 
 ## User Stories
 
@@ -18,6 +18,7 @@ As a user I would like to:
 * on click on the image, the image should enlarge with more detatils of the image
 * different categories should have different images
 * I should click on about page and see more about the page
+* Used admin as username and password as admnin123 to load up categories and locations
 
 ## SetUp / Installation Requirements
 
